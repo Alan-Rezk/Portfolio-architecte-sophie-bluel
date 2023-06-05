@@ -12,10 +12,14 @@ export function renderFilters() {
     .then((categories) => {
         //je créer un premier bouton Global "Tous"
         const filterDiv = document.createElement("div");
-        filterDiv.className = "filtreDiv";
+        filterDiv.className = "filterDiv";
         const allElementsButton = document.createElement("button");
         // nom et insertion du bouton 
         allElementsButton.innerText = "Tous";
+        //réglage paramétre pour la couleur des boutons filtre
+        allElementsButton.classList.add('btn')
+        addActiveClass(allElementsButton)
+        //rajout du bouton dans la Div
         filterDiv.appendChild(allElementsButton);
         //création d'une boucle pour avoir l'ensemble des boutons
         categories.forEach((category) => {
@@ -40,3 +44,10 @@ export function renderFilters() {
     })
 }
 
+function addActiveClass(button){
+    document.querySelectorAll(".btn").forEach((btn) => {
+        btn.classList.remove("active")
+    })
+    button.classList.add("active")
+  
+  }
