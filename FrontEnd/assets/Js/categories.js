@@ -14,7 +14,29 @@ export function renderFilters() {
         const filterDiv = document.createElement("div");
         filterDiv.className = "filtreDiv";
         const allElementsButton = document.createElement("button");
+        // nom et insertion du bouton 
         allElementsButton.innerText = "Tous";
         filterDiv.appendChild(allElementsButton);
+        //création d'une boucle pour avoir l'ensemble des boutons
+        categories.forEach((category) => {
+            const newButton = document.createElement("button");
+            newButton.innerText = category.name;
+            newButton.className = "btn";
+            filterDiv.appendChild(newButton);
+
+            newButton.addEventListener("click", function () {
+                renderWorks(category.name);
+                addActiveClass(newButton);
+              });
+        })
+// fin de l'insertion des boutons filtres
+        const gallery = document.querySelector(".gallery");
+        gallery.parentNode.insertBefore(filterDiv, gallery);
+  
+        allElementsButton.addEventListener("click", function () {
+          addActiveClass(allElementsButton)
+          renderWorks("Tous");
+        });
     })
 }
+
