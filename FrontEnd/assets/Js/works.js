@@ -5,7 +5,14 @@
 const gallery = document.querySelector(".gallery");
 gallery.innerHTML = "";
 
-fetch("http://localhost:5678/api/works")
+//appel de l'API avec une requête GET afin de récupérer dynamiquement les projets de l'architecte.
+
+fetch("http://localhost:5678/api/works?timestamp=" + Date.now())
+    .then((reponse) => {
+        if (reponse.ok) {
+            return reponse.json();
+        }
+    })
 
 
 
