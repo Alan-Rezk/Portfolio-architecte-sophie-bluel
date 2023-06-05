@@ -1,0 +1,9 @@
+header,
+main {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.container {
+    background-color: #fffef8;
+}
