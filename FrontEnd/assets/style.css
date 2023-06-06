@@ -187,6 +187,11 @@ nav li {
 	font-size: 1.2em;
 }
 
+li a {
+	text-decoration: none;
+	color: black;
+}
+
 li:hover {
 	color: #B1663C;
 }
@@ -266,7 +271,6 @@ button {
 
 .gallery img {
 	width: 100%;
-
 }
 
 #contact {
@@ -320,5 +324,5 @@ input[type="submit"] {
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }
