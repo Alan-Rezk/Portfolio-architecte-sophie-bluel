@@ -20,6 +20,12 @@ form.addEventListener("submit", function(e) {
         alert("Veuillez saisir un mot de passe");
         return;
     }
-    //Faire appel à l'API pour email et le mot de passe avec fetch Post
-    
+    //Faire appel à l'API pour email et mot de passe avec fetch Post
+    fetch("http://localhost:5678/api/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(datas),
+    })
 })
