@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/login.css">
     <title>Sophie Bluel - Architecte d'intérieur</title>
 </head>
 
 <body>
-    <div>
-        <header>
+    <div class="container">
+        <header id="login__header">
             <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
             <nav>
                 <ul>
@@ -22,17 +28,17 @@
             </nav>
         </header>
         <main>
-            <section>
+            <section class="login__section">
                 <h1>Log in</h1>
-                <div>
-                    <form>
+                <div class="login-form__container">
+                    <form class="login__form">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email">
 
                         <label for="password">Mot de passe</label>
                         <input type="password" id="password" name="password">
-                        <div>
-                            <button>Se connecter</button>
+                        <div class="login-form__container">
+                            <button type="submit" class="loginButton">Se connecter</button>
                             <a href="#">Mot de passe oublié</a>
                         </div>
                     </form>
