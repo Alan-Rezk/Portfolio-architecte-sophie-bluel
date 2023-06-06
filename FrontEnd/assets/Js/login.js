@@ -28,4 +28,17 @@ form.addEventListener("submit", function(e) {
         },
         body: JSON.stringify(datas),
     })
-})
+
+    //traitement de la réponse de l'API en JSON avec redirection vers l'accueil ou message en échec
+    .then((response) => response.json())
+    .then((datas) => {
+        //stocker la réponse de l'api dans localstorage
+        localStorage.setItem("token", datas.token);
+        if (datas.token) {
+            window.location.assign("index.html")
+        }
+        else {
+            alert("mot de passe ou email incorrect")
+        }
+    });
+});
