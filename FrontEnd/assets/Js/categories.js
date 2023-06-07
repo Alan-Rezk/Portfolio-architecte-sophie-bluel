@@ -25,7 +25,7 @@ export function renderFilters() {
         categories.forEach((category) => {
             const newButton = document.createElement("button");
             newButton.innerText = category.name;
-            newButton.className = "btn";
+            newButton.className = "btn"
             filterDiv.appendChild(newButton);
 
             newButton.addEventListener("click", function () {
@@ -49,5 +49,4 @@ function addActiveClass(button){
         btn.classList.remove("active")
     })
     button.classList.add("active")
-  
   }

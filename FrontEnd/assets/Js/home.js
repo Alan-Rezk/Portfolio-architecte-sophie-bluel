@@ -3,6 +3,7 @@
 import { renderWorks } from "./works.js";
 import { renderFilters } from "./categories.js";
 import { setAdminPage } from "./admin.js";
+import { modalFunction } from "./modal.js";
 
 
 // Appel de fonction pour afficher tous les travaux
@@ -10,7 +11,8 @@ import { setAdminPage } from "./admin.js";
 renderWorks("Tous")
 
 if (localStorage.getItem('token')) {
-    setAdminPage()
+    setAdminPage();
+    modalFunction()
 } else {
     renderFilters()
 }

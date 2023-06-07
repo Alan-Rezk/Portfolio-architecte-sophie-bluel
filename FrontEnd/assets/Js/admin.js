@@ -31,7 +31,7 @@ function createModalLink (classModal, editText) {
     editIcon.classList.add('fa-sharp', 'fa-solid', 'fa-pen-to-square')
     const pText = document.createElement('p')
     pText.innerHTML = editText
-    pText.innerHTML = editText
+    const modalDivLink = document.createElement('div')
     modalDivLink.classList.add('modal-div-link', 'js-modal')
 //ajout de l'icone et du texte
     modalDivLink.appendChild(editIcon)

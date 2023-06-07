@@ -38,7 +38,10 @@ fetch("http://localhost:5678/api/works?timestamp=" + Date.now())
             gallery.appendChild(newFigure);
         })
     })
-
+    //si une erreur de récupération de API, afficher un message d'erreur
+    .catch((err) => {
+        gallery.innerHTML = `<p>Une erreur est survenue (${err})</p>`;
+      });
 }
 
 
