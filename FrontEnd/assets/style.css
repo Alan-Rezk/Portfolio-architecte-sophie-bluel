@@ -326,3 +326,57 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em;
 }
+
+/*ADMIN*/
+
+
+.admin-div {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: baseline;
+	gap: 35px;
+	margin-bottom: 4rem;
+	margin-top: 6rem;
+}
+
+.admin-bar {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	gap: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.adminHeader {
+	margin-top: 100px;
+}
+
+.admin-bar i {
+	color: white;
+	font-size: 1.5rem;
+}
+
+.admin-div i {
+	font-size: 20px;
+}
+
+.admin-bar p {
+	color: white;
+	font-size: large;
+}
+
+.admin-bar button {
+	font-family: Work Sans;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	font-size: large;
+}
