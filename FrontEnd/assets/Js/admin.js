@@ -6,7 +6,7 @@ export function setAdminPage () {
     const modalLink = createModalLink('admin-div', 'modifier')
     const portfolioSection = document.getElementById('portfolio')
     portfolioSection.insertAdjacentElement('afterbegin', modalLink)
-  
+
     const underMainPic = document
       .getElementById('introduction')
       .querySelector('figure')
@@ -28,7 +28,7 @@ export function setAdminPage () {
 function createModalLink (classModal, editText) {
     //je crée un élément pour afficher l'icône et le paramétré avec les classes fontawesome
     const editIcon = document.createElement('i')
-    editIcon.classList.add('fa-sharp', 'fa-solid', 'fa-pen-to-square')
+    editIcon.classList.add('fa-regular', 'fa-pen-to-square')
     const pText = document.createElement('p')
     pText.innerHTML = editText
     const modalDivLink = document.createElement('div')
@@ -50,7 +50,7 @@ function createAdminNav () {
     const adminBar = document.createElement('div')
     adminBar.innerHTML = '<i></i> <p>Mode Edition</p> <button>publier les changements</button>'
     adminBar.className = 'admin-bar'
-    adminBar.firstChild.classList.add('fa-sharp', 'fa-solid', 'fa-pen-to-square')
+    adminBar.firstChild.classList.add('fa-regular', 'fa-pen-to-square')
     const navheader = document.querySelector('header')
     navheader.insertAdjacentElement('afterbegin', adminBar)
 
