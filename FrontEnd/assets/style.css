@@ -137,16 +137,26 @@ table {
 
 /** end reset css**/
 body {
-	max-width: 1140px;
+	max-width: 1440px;
 	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
 }
 
+.container {
+	background-color: #fffef8;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+main {
+	padding: 0 250px 0 250px;
 }
 
 section {
@@ -180,11 +190,10 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 
 nav li {
-	padding: 0 10px;
+	padding-left: 50px;
 	font-size: 1.2em;
 }
 
@@ -214,8 +223,8 @@ li a:hover {
 
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	margin: 0;
+	width: 90%;
 }
 
 #introduction article {
@@ -228,6 +237,10 @@ li a:hover {
 
 #introduction p {
 	margin-bottom: 0.5em;
+}
+
+#portfolio {
+	margin-top: 130px;
 }
 
 #portfolio h2 {
@@ -448,6 +461,7 @@ p {
 	margin-bottom: 20px;
 }
 
+/*croix de fermeture*/
 .close {
 	color: black;
 	font-size: 25px;
@@ -464,7 +478,6 @@ p {
 	padding: 30px;
 }
 
-/*croix de fermeture*/
 .close:hover,
 .close:focus {
 	text-decoration: none;
@@ -613,6 +626,7 @@ select {
 
 .list-formats {
 	font-size: 10px;
+	color: #444444;
 }
 
 /*******Ajouter les photos*******/
@@ -621,7 +635,7 @@ form {
 }
 
 .image-placeholder {
-	font-size: 46px;
+	font-size: 60px;
 	margin-bottom: 10px;
 	color: #B9C5CC;
 }

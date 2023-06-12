@@ -31,10 +31,11 @@ form.addEventListener("submit", function(e) {
 
     //traitement de la réponse de l'API en JSON avec redirection vers l'accueil ou message en échec
     .then((response) => response.json())
-    .then((datas) => {
+    .then((data) => {
         //stocker la réponse de l'api dans localstorage
-        localStorage.setItem("token", datas.token);
-        if (datas.token) {
+        console.log(data)
+        localStorage.setItem("token", data.token);
+        if (data.token) {
             window.location.assign("index.html")
         }
         else {

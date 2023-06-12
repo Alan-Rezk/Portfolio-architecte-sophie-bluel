@@ -3,6 +3,7 @@
 // j'importe le rendu de works pour donner accès à la fonction
 
 import { renderWorks } from "./works.js";
+
 export function renderFilters() {
     // je fais une requête GET pour avoir accès aux donnés catégories de l'API 
     fetch("http://localhost:5678/api/categories")
@@ -23,14 +24,14 @@ export function renderFilters() {
         filterDiv.appendChild(allElementsButton);
         //création d'une boucle pour avoir l'ensemble des boutons
         categories.forEach((category) => {
-            const newButton = document.createElement("button");
-            newButton.innerText = category.name;
-            newButton.className = "btn"
-            filterDiv.appendChild(newButton);
+            const filterButton = document.createElement("button");
+            filterButton.innerText = category.name;
+            filterButton.className = "btn"
+            filterDiv.appendChild(filterButton);
 
-            newButton.addEventListener("click", function () {
+            filterButton.addEventListener("click", function () {
                 renderWorks(category.name);
-                addActiveClass(newButton);
+                addActiveClass(filterButton);
               });
         })
 // fin de l'insertion des boutons filtres

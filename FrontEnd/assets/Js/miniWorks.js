@@ -12,7 +12,11 @@ export function renderMiniWorks(category) {
 		})
 		//mettre en place chaque travaux dans works
 		.then((works) => {
+			//je cherche à mettre les flèches directionnelle sur la première image
+			let isFirstImage = true;
+			//
 			works.forEach((work) => {
+				//transformer en fonction!!!!
 				const newFigure = document.createElement("figure");
 				const newImage = document.createElement("img");
 				const trashCan = document.createElement("i");
@@ -22,6 +26,15 @@ export function renderMiniWorks(category) {
 				newImage.src = work.imageUrl;
 				newImage.alt = "Photo du projet";
 // création d'une structure HTML avec image texte et corbeille
+
+				//les flèches directionnelle doit être présent seulement sur la première image
+				if (isFirstImage) {
+					const arrowsIcon = document.createElement("i");
+					arrowsIcon.classList.add("fa-solid", "fa-arrows-up-down-left-right");
+					newFigure.appendChild(arrowsIcon);
+					isFirstImage = false;
+				}
+				//
 				newFigure.appendChild(newImage);
 				const newFigcaption = document.createElement("figcaption");
 				newFigcaption.innerText = "éditer";
