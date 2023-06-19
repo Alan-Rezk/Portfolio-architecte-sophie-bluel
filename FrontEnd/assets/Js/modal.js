@@ -104,7 +104,6 @@ export function modalFunction() {
 		closeX.className = "close";
 		closeX.innerText = "x";
 		newInnerDiv.appendChild(closeX);
-		const divToShow = document.querySelector("modal-wrapper");
 		//fléche retour
 		const returnArrow = document.createElement("i");
 		returnArrow.classList.add("return-arrow", "fa-solid", "fa-arrow-left-long");
@@ -300,9 +299,11 @@ export function modalFunction() {
 			body: formData,
 		})
 			.then((response) => response.json())
+			//mettre les conditions if
 			.then((data) => {
 				const gallery = document.querySelector('.gallery');
 				const miniGallery = document.querySelector('.miniGallery');
+				//faire appel à renderworks
 				const figureGallery = document.createElement('figure');
 				const figureMiniGallery = document.createElement('figure');
 				const title = document.createElement('figcaption');
