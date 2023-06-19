@@ -5,9 +5,13 @@ export function renderMiniWorks(category) {
 	const divider = document.querySelector(".divider");
 //appel à API avec attente de réponse en JSON
 	fetch("http://localhost:5678/api/works")
-		.then((response) => {
+		.then((response) =>  {
+			console.log(reponse.status);
+	
 			if (response.ok) {
 				return response.json();
+			} else {
+				throw new Error("Erreur de la requête");
 			}
 		})
 		//mettre en place chaque travaux dans works

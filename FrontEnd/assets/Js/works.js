@@ -9,9 +9,13 @@ export function renderWorks(category) {
 //appel de l'API avec une requête GET afin de récupérer dynamiquement les projets de l'architecte.
 
 fetch("http://localhost:5678/api/works?timestamp=" + Date.now())
-    .then((reponse) => {
-        if (reponse.ok) {
-            return reponse.json();
+    .then((response) => {
+        console.log(response.status);
+
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Erreur de la requête");
         }
     })
 

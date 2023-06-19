@@ -7,7 +7,10 @@ import { renderWorks } from "./works.js";
 export function renderFilters() {
     // je fais une requête GET pour avoir accès aux donnés catégories de l'API 
     fetch("http://localhost:5678/api/categories")
-    .then((response) => response.json())
+    .then((response) => {
+        console.log(response.status);
+        return response.json();
+    })
     //début de création des boutons du filtres
     //Une fois les données JSON disponibles je passe les Données Json en paramétre categories
     .then((categories) => {
