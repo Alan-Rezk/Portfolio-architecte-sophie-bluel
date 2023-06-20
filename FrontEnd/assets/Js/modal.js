@@ -104,6 +104,7 @@ export function modalFunction() {
 		closeX.className = "close";
 		closeX.innerText = "x";
 		newInnerDiv.appendChild(closeX);
+		const divToShow = document.querySelector("modal-wrapper");
 		//fléche retour
 		const returnArrow = document.createElement("i");
 		returnArrow.classList.add("return-arrow", "fa-solid", "fa-arrow-left-long");
@@ -224,10 +225,7 @@ export function modalFunction() {
 		addPhotoForm.appendChild(selectCategory);
 
 		fetch("http://localhost:5678/api/categories")
-			.then((response) => {
-				console.log(response.status);
-				return response.json();
-			})
+			.then((response) => response.json())
 
 			.then((categories) => {
 				const selectCategory = document.getElementById("select-category");
@@ -301,16 +299,14 @@ export function modalFunction() {
 			},
 			body: formData,
 		})
-			.then((response) => {
-				console.log(response.status);
-				return response.json();
-			})
+			.then((response) => response.json())
 			//mettre les conditions if
 			.then((data) => {
 				const gallery = document.querySelector('.gallery');
 				const miniGallery = document.querySelector('.miniGallery');
 				//faire appel à renderworks
 				const figureGallery = document.createElement('figure');
+				const figureMiniGallery = document.createElement('figure');
 				const title = document.createElement('figcaption');
 				const img = document.createElement('img');
 				img.src = data.imageUrl;
@@ -321,7 +317,7 @@ export function modalFunction() {
 				gallery.appendChild(figureGallery);
 
 				const figureClone = figureGallery.cloneNode(true);
-				miniGallery.appendChild(figureClone);		
+				miniGallery.appendChild(figureClone);
 				console.log("Success:", data);
 				alert('Photo téléchargé')
 			})
