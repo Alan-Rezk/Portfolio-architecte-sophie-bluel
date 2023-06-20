@@ -5,7 +5,15 @@ export function renderMiniWorks(category) {
 	const divider = document.querySelector(".divider");
 //appel à API avec attente de réponse en JSON
 	fetch("http://localhost:5678/api/works")
-		.then((response) => response.json())
+		.then((response) => {
+			console.log(response.status);
+	
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error("Erreur de la requête");
+			}
+		})
 		//mettre en place chaque travaux dans works
 		.then((works) => {
 			//je cherche à mettre les flèches directionnelle sur la première image

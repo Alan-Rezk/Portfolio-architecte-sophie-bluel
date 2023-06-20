@@ -33,9 +33,14 @@ export function modalFunction() {
 		addPhotoBtn.innerText = "Ajouter une photo";
 		addPhotoBtn.classList.add("next-page")
 //passage à la seconde page de la modal ligne 270
-		addPhotoBtn.addEventListener('click', function(){
-			nextPageModal()
-		})
+addPhotoBtn.addEventListener("click", function (e) {
+	e.stopPropagation();
+	e.preventDefault();
+	const modalContent = document.querySelector('.modal-wrapper')
+	modalContent.classList.add("d-none");
+	const nextPage = document.querySelector('.modal-ajouter-wrapper')
+	nextPage.classList.remove("d-none")
+});
 
 		const deleteGalleryLink = document.createElement("a");
 		deleteGalleryLink.innerText = "Supprimer la galerie";
@@ -225,7 +230,15 @@ export function modalFunction() {
 		addPhotoForm.appendChild(selectCategory);
 
 		fetch("http://localhost:5678/api/categories")
-			.then((response) => response.json())
+			.then((response) => {
+				console.log(response.status);
+		
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error("Erreur de la requête");
+				}
+			})
 
 			.then((categories) => {
 				const selectCategory = document.getElementById("select-category");
@@ -267,17 +280,7 @@ export function modalFunction() {
 	}
 
 	// fonction seconde page de la modal
-	function nextPageModal() {
-		const addPhotoBtn = document.querySelector('.next-page');
-		addPhotoBtn.addEventListener("click", function (e) {
-			e.stopPropagation();
-			e.preventDefault();
-			const modalContent = document.querySelector('.modal-wrapper')
-			modalContent.classList.add("d-none");
-			const nextPage = document.querySelector('.modal-ajouter-wrapper')
-			nextPage.classList.remove("d-none")
-		});
-	}
+
 	//fonction retour
 	function previousPageModal() {
 		const divToHide = document.querySelector(".modal-ajouter-wrapper");
@@ -299,7 +302,15 @@ export function modalFunction() {
 			},
 			body: formData,
 		})
-			.then((response) => response.json())
+			.then((response) => {
+				console.log(response.status);
+		
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error("Erreur de la requête");
+				}
+			})
 			//mettre les conditions if
 			.then((data) => {
 				const gallery = document.querySelector('.gallery');
