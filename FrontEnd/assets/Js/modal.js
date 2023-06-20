@@ -47,7 +47,7 @@ addPhotoBtn.addEventListener("click", function (e) {
 
 		//création d'une div globale: ajoute un enfant dans la div puis regroupé dans le conteneur de la modal 
 		//transformer en fonction!!!!
-		newInnerDiv.appendChild(closeX);
+		newOuterDiv.appendChild(closeX);
 		newInnerDiv.appendChild(modalTitle);
 		newInnerDiv.appendChild(divider);
 		newInnerDiv.appendChild(addPhotoBtn);
@@ -58,7 +58,6 @@ addPhotoBtn.addEventListener("click", function (e) {
 		modalDiv.appendChild(newOuterDiv);
 
 		renderMiniWorks();
-		closeModal();
 
 	}
 	//création de l'ensemble des fonctions à l'utilisation de ma modal
@@ -104,12 +103,6 @@ addPhotoBtn.addEventListener("click", function (e) {
 
 		const newInnerDiv = document.createElement("div");
 		newInnerDiv.classList.add("modal-ajouter-wrapper", "d-none");
-		// insertion fermeture de la page 2
-		const closeX = document.createElement("span");
-		closeX.className = "close";
-		closeX.innerText = "x";
-		newInnerDiv.appendChild(closeX);
-		const divToShow = document.querySelector("modal-wrapper");
 		//fléche retour
 		const returnArrow = document.createElement("i");
 		returnArrow.classList.add("return-arrow", "fa-solid", "fa-arrow-left-long");
@@ -276,10 +269,8 @@ addPhotoBtn.addEventListener("click", function (e) {
 		newOuterDiv.appendChild(newInnerDiv);
 		modalHTML.appendChild(newOuterDiv);
 
-		closeModal();
 	}
 
-	// fonction seconde page de la modal
 
 	//fonction retour
 	function previousPageModal() {
